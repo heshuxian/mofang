@@ -92,16 +92,16 @@
                             </a>
                         </li>
                     <?php if($userObj->user_role == 'admin'){?>
-                        <li <?php if($actLi == 'user'){?> class="active" <?php }?>>
-                            <a href="#">
-                                <i class="fa fa-th"></i> <span>人员管理</span>
+                        <li <?php if($actLi == 'article'){?> class="active" <?php }?>>
+                            <a href="/account/articlemanage">
+                                <i class="fa fa-th"></i> <span>文章管理</span>
                             </a>
                         </li>
                         <?php }?>
                         <li <?php if($actLi == 'news'){?> class="active" <?php }?>>
                             <a href="#">
                                 <i class="fa fa-bar-chart-o"></i>
-                                <span>动态管理</span>
+                                <span>新闻列表</span>
                             </a>
                         </li>
                     </ul>
@@ -124,9 +124,8 @@
         <script src="/public/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
         <script src="/public/js/bootstrap.min.js" type="text/javascript"></script>
-        <!-- Morris.js charts -->
-        <script src="/public/js/raphael-min.js"></script>
-        <script src="/public/js/plugins/morris/morris.min.js" type="text/javascript"></script>
+        <!-- Morris.js charts -->        <script src="/public/js/raphael-min.js"></script>
+        <!-- <script src="/public/js/plugins/morris/morris.min.js" type="text/javascript"></script> -->
         <!-- Sparkline -->
         <script src="/public/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
         <!-- jvectormap -->
@@ -142,7 +141,11 @@
         <script src="/public/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
         <!-- iCheck -->
         <script src="/public/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
-
+		<!-- Notyfy -->
+		<script type="text/javascript" src="/public/js/plugins/notyfy/jquery.notyfy.js"></script>
+        <!-- bootbox -->
+        <script src="/public/js/plugins/bootbox.js" type="text/javascript"></script>
+        
         <!-- AdminLTE App -->
         <script src="/public/js/AdminLTE/app.js" type="text/javascript"></script>
         
@@ -150,7 +153,7 @@
         <script src="/public/js/AdminLTE/dashboard.js" type="text/javascript"></script>     
         
         <!-- AdminLTE for demo purposes -->
-        <script src="/public/js/AdminLTE/demo.js" type="text/javascript"></script>
+        <!-- <script src="/public/js/AdminLTE/demo.js" type="text/javascript"></script> -->
         <?php echo $headerPlaceHolder;?>
     </body>
 </html>

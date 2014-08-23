@@ -1,0 +1,358 @@
+﻿@charset "utf-8";
+
+/* all */
+*{margin:0; padding:0}
+ul li{list-style:none}
+img{border:0}
+body{
+	font-size:12px;
+	font-family:"微软雅黑","宋体", Arial, Sans-Serif;
+	line-height:22px;
+	color:#444;
+}
+a{text-decoration:none; color:#777}
+a:hover{color:#444}
+input{font-size:12px; font-family:"微软雅黑","宋体", Arial, Sans-Serif; padding:0 3px}
+.redfont{color:#d11300}
+.more,.more:hover{float:right; background:#d11300; color:#fff; font-size:12px; padding:0 8px; height:19px; line-height:19px; border-radius:2px}
+h2 span font{font-size:18px; color:#d11300}
+h1,h2,h2 span,h3,.logo a,.header div,.search input,.nav,.nav li,
+.carousel-list,.carousel-list li,.carousel-list li a,
+.advertising,.advantages,.advantages li,.advantages li img,.advantages li span{float:left}
+h1,h2,h3{font-weight:normal}
+
+/* layout */
+.header{
+	margin:20px auto 0;
+	width:1000px;
+	height:90px;
+}
+.logo a{
+	width:70px;
+	height:70px;
+	background:url(../images/logo.png) 0 0 no-repeat;
+	text-indent:-5000px;
+}
+.header .right{
+	width:855px;
+	overflow:hidden;
+	padding:2px 0 0 75px;
+	height:48px;
+}
+.header .notice{
+	width:285px;
+	padding:0 11px;
+	border:1px solid #ddd;
+	height:26px;
+	line-height:26px;
+	border-radius:3px;
+	overflow:hidden;
+}
+.righttop{
+	padding:0 2px 0 31px;
+	line-height:28px;
+}
+.righttop a{
+	float:left;
+	margin:0 16px 0 0;
+}
+.search .input{
+	height:26px;
+	line-height:26px;
+	border:1px solid #ddd;
+	color:#DDDDDD;
+	width:169px;
+	padding:0 6px;
+	border-right:none 0;
+	background:url(../images/search_bg.gif) 0 0 repeat-x;
+	border-radius:2px 0 0 2px;
+}
+.search .btn{
+	width:68px;
+	color:#fff;
+	height:28px;
+	line-height:27px;
+	background:url(../images/search_btn.gif) 0 0 no-repeat;
+	padding:0 0 0 19px;
+	border:none 0;
+	border-radius:0 2px 2px 0;
+}
+.nav{
+	float:left;
+	font-size:14px;
+	font-weight:bold;
+	margin:0 0 0 12px;
+    overflow:hidden;
+    padding:0 0 0 230px;
+    width:688px;
+	background:url(../images/nav_bg.gif) left center no-repeat;
+}
+.nav li{padding:0 0 0 25px}
+.nav li a{color:#333}
+.nav li.act a,.nav li a:hover{color:#d11300}
+.bannerbox{width:1000px; height:292px; margin:0 auto 21px; position:relative; overflow:hidden}
+.bannerbox .num{overflow:hidden; height:15px; position:absolute; bottom:12px; left:470px; zoom:1; z-index:3}
+.bannerbox .num li{width:10px; height:10px; border:2px solid #444; background:#444; margin-right:9px; border-radius:50%; cursor:pointer; float:left; text-indent:-5000px}
+.bannerbox .num li.on{background:#00d4ff}
+.bannerbox .prev,.bannerbox .next{display:none; width:54px; height:78px; background:url(../images/btn.png) no-repeat; position:absolute; top:108px}
+.bannerbox .prev{left:0}
+.bannerbox .next{right:0; background-position:right}
+.main{
+	width:100%;
+	margin:0 auto;
+	overflow:hidden;
+	background:url(../images/mainbg.gif) 0 0 repeat-x;
+}
+.maincon{width:1000px; margin:0 auto; overflow:hidden}
+.indexleft{float:left; width:546px}
+.indexright{float:right; width:454px; height:520px}
+.introbox{float:left; width:546px; height:293px}
+.introbox .photo{float:left; width:196px}
+.introbox .text{float:left; width:324px}
+.introbox h2{
+	font-size:18px;
+	line-height:51px;
+	height:55px;
+	width:324px;
+}
+.introbox h2 a{color:#444}
+.introbox p{float:left; width:320px; margin:7px 0 0}
+.indexlist{float:left; width:245px; margin:0 28px 0 0}
+.indexlist h2,.sentiment h2{
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+	color:#555;
+	width:219px;
+	padding:0 13px;
+	background:#f0f0f0;
+}
+.indexlist h2 .more,.sentiment h2 .more{margin:11px 0 0}
+.courselist,.courselist li{float:left; margin:9px 0; width:100%; overflow:hidden}
+.courselist li{height:22px; margin:0}
+.activitie{float:left; width:245px; margin:15px 0 0}
+.activitiebox,.activitiefla{overflow:hidden; position:relative}
+.activitieimg{text-align:right; position:relative; z-index:999}
+.activitie .bitdiv{
+	display:inline-block;
+	width:9px;
+	height:9px;
+	margin:0 10px 10px 0;
+	cursor:pointer;
+	float:right;
+	border-radius:50%;
+	border:2px solid #ddd;
+}
+.activitie .defimg{background:#444}
+.activitie .curimg{background:#d11300}
+.newsbox,.sentiment{float:left; width:454px}
+.newsbox h2,.clubbox h2{
+	height:50px;
+	line-height:50px;
+	width:438px;
+	padding:0 0 0 16px;
+	background:url(../images/h2left.gif) left center no-repeat;
+	font-size:14px;
+	color:#555;
+}
+.newsbox h2 span,.clubbox h2 span{padding:0 16px 0 0; background:url(../images/h2right.gif) right center no-repeat}
+.newsbox h2 .more,.clubbox h2 .more{margin:16px 0 0}
+.newspic{float:left; width:180px; margin:16px 0; height:134px}
+.newspic a,.listpic a{
+	float:left;
+	padding:3px;
+	width:156px;
+	height:116px;
+	border:1px solid #eee;
+	border-radius:3px;
+	box-shadow:0 0 2px #ddd;
+	background:#fff;
+}
+.newslist,.newslist li{float:left; width:274px; overflow:hidden; margin:12px 0 0}
+.newslist li{height:22px; background:url(../images/newslistbg.gif) 0 15px repeat-x; margin:0}
+.newslist li div{float:left; width:205px; overflow:hidden}
+.newslist li div a{float:left; background:#fff; padding:0 6px 0 0}
+.newslist li span{
+	float:right;
+	background:#fff;
+	width:65px;
+	text-align:right;
+	font-family:Arial;
+	color:#999;
+	font-size:11px;
+}
+.sentiment h2{width:428px}
+.sentimentlist,.sentimentlist li{float:left; margin:4px 0 0; width:454px; overflow:hidden; height:236px}
+.sentimentlist li{height:103px; margin:13px 0 0}
+.sentimentimg{float:left; width:84px}
+.sentimentimg img{
+	width:70px;
+	height:70px;
+	padding:1px;
+	background:#fff;
+	border:1px solid #ddd;
+	border-radius:3px;
+}
+.sentimenttext{
+	float:left;
+	width:330px;
+	background:url(../images/sentimentbg.gif) 0 0 no-repeat;
+	height:94px;
+	overflow:hidden;
+	padding:9px 15px 0 25px;
+	line-height:20px;
+}
+.sentimenttext p.text,.sentimenttext p.name{
+	float:left;
+	height:63px;
+	width:330px;
+	overflow:hidden;
+}
+.sentimenttext p.name{text-align:right; height:20px; color:#777}
+.clubbox{width:1080px; margin:0 auto; overflow:hidden}
+.clubbox h2{width:983px; padding:0 0 0 16px; margin:0 40px}
+.clubcon{
+	float:left;
+	margin:17px 0;
+	width:1080px;
+	height:160px;
+    position:relative;
+}
+.clubcon .leftbtn, .clubcon .rightbtn{
+    position:absolute;
+    top:42px;
+    z-index:99;
+}
+.clubcon .leftbtn{left:0}
+.clubcon .rightbtn{right:0}
+.carousel-component{position:relative; z-index:98; overflow:hidden; visibility:visible; height:160px; width:1024px; margin:0 28px; float:left}				
+.carousel-component .carousel-list{width:9000000px; position:relative; z-index:1}
+.carousel-component .carousel-list li{width:232px; border:0; padding:0 12px}
+.carousel-component .carousel-list li img{width:232px; height:130px; display:block}
+.carousel-component .carousel-list li p{line-height:34px; height:34px; width:232px; overflow:hidden}
+.carousel-component .carousel-vertical li{float:none; margin-bottom:0}
+.carousel-component .carousel-vertical{width:auto}
+.carousel-component .carousel-clip-region{overflow:hidden; margin:0 auto; position:relative}
+.carousel-component .carousel-list li{text-align:center; overflow:hidden}
+.carousel-component .carousel-list li a{margin:0 0 10px}
+.clubcon .leftbtn img,.clubcon .rightbtn img{cursor:pointer}
+.mainnav{margin:0 auto; height:50px; line-height:50px; color:#777; width:1000px}
+.mainnav span{color:#d11300; font-size:14px}
+.content{
+	margin:0 auto;
+	width:1000px;
+	overflow:hidden;
+	background:url(../images/conbg.gif) 789px 0 repeat-y;
+}
+.conleft{float:left; width:790px}
+.conright{float:left; width:210px; margin:0 0 20px}
+.conleft h2{width:755px; font-size:18px; margin:20px 0 12px; color:#333}
+.conleft h2.detailtitle{text-align:center; color:#d11300}
+.conlist,.conlist li{float:left; width:755px; overflow:hidden}
+.conlist li{
+	height:138px;
+	background:url(../images/newslistbg.gif) left bottom repeat-x;
+	margin:0 0 14px;
+}
+.listpic{float:left; width:180px}
+.listtext{float:left; width:575px; color:#888}
+.listtext h3{width:575px; font-size:14px; margin:0 0 5px}
+.listtext h3 a{color:#333}
+.listtext p{float:left; width:575px; margin:0 0 5px}
+.pagination{float:left; width:760px ;margin:4px 0 20px -4px}
+.pagination li{float:left; line-height:16px; padding:0 5px}
+.pagination li a{
+	float:left;
+	color:#d11300;
+	height:17px;
+	border:1px solid #fff;
+	padding:0 6px;
+}
+.pagination li a:hover,.pagination li.active a{
+	background:#ffe8e1;
+	border:1px solid #d11300;
+}
+.pagination li.previous a,.pagination li.next a{
+	height:18px;
+	overflow:hidden;
+	width:18px;
+	border:0;
+	padding:0;
+	background:url(../images/btn-previous.gif) 0 0 no-repeat;
+}
+.pagination li.next a{background-position:0 -18px}
+.pagination li.gotoPage{float:right; margin:-3px 0 0}
+.pagination li.gotoPage input.page{
+	width:26px;
+	height:17px;
+	border:1px solid #d11300;
+}
+.pagination li.gotoPage input.more{border:0}
+.righttitle{
+	float:left;
+	width:180px;
+	height:38px;
+	line-height:32px;
+	background:url(../images/righttitle.gif) 0 0 no-repeat;
+	color:#fff;
+	padding:0 0 0 30px;
+	font-size:15px;
+	margin:22px 0 0;
+}
+.rightlist{float:left; width:180px; padding:0 0 0 30px}
+.rightlist li{float:left; width:180px}
+.conright h2{width:180px; padding:0 0 0 30px; font-size:14px; margin:16px 0 5px}
+.rightinfo{float:left; width:180px; margin:5px 0 5px 30px; text-align:center}
+.QRCode{float:left; width:180px}
+.QRCode img{border:1px solid #ddd; margin:0 0 3px}
+.rightinfo a,.rightinfo a:hover{
+	float:left;
+	background:#d11300;
+	color:#fff;
+	font-size:12px;
+	padding:0 8px;
+	width:164px;
+	height:22px;
+	border-radius:3px;
+	margin:5px 0;
+	font-size:13px;
+}
+.detailtop{
+	float:left;
+	width:753px;
+	height:40px;
+	line-height:40px;
+	color:#888;
+	text-align:center;
+	border:1px solid #eee;
+    border-radius:3px;
+    box-shadow:0 0 2px #ddd;
+	margin:5px 0;
+}
+.detailtop span{color:#444}
+.detailtop a{color:#d11300}
+.detailcon{float:left; width:760px}
+.detailcon p{text-indent:2em; margin:5px 0 7px}
+.footer{width:100%; border-top:1px solid #ccc; margin:0 auto}
+.footerBox{
+	width:1000px;
+	margin:20px auto;
+	color:#888;
+	overflow:hidden;
+}
+.footerBox .left,.footerBox .left p{float:left; width:545px}
+.footerBox .right{float:left; width:455px}
+.footernav{
+	float:left;
+	height:83px;
+	line-height:70px;
+	background:url(../images/logo.png) 0 0 no-repeat;
+	padding:0 0 0 90px;
+}
+.footernav a{color:#444; font-size:14px}
+.footerBox .right .btn{float:left; width:455px; height:24px}
+.footerBox .right .btn .more{margin:0 0 0 12px}
+.footerBox .right .btn .more img,.footerBox .right .btn .more span{float:left}
+.footerBox .right .btn .more span{font-family:Arial; padding:0 0 0 5px}
+.footerBox .right h3{width:455px; font-size:14px; color:#444; height:24px}
+.footerBox .right p{float:left; width:455px; margin:0 0 9px}

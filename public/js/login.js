@@ -46,7 +46,8 @@ $(function () {
         },
         success: function(error,element){
         	error.remove();
-        }
+        },
+        errorClass:'alert-danger',
     });
     
     $('#btnLogin').click(function(){

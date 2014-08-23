@@ -288,9 +288,9 @@ $(window).load(function() {
             f = [];
             for (d in b.prototype)
                 try {
-                    e = b.prototype[d], null == a[d] && "function" != typeof e ? f.push(a[d] = e) : f.push(void 0)
+                   // e = b.prototype[d], null == a[d] && "function" != typeof e ? f.push(a[d] = e) : f.push(void 0)
                 } catch (g) {
-                    c = g
+                    //c = g
                 }
             return f
         }, z = [], Pace.ignore = function() {

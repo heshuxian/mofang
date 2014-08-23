@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "account";
+$route['default_controller'] = "portal";
 $route['login'] = "portal/login";
 $route['signin'] = "portal/signin";
 $route['logout'] = "account/logout";
