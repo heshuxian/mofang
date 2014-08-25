@@ -177,6 +177,20 @@ class Portal extends CI_Controller {
 		return $this->_Get_Image_Thumb("/article_img/".$filename, 500, 146);
 	}
 
+	public function test()
+	{
+		$jsonRet = array();
+		$data = array();
+		$data['client_id'] = 'pandora';
+		$data['client_secret'] = 'pandora';
+		$data['redirect_uri'] = 'www.pandora.com';
+		$data['userid'] = 'admin';
+		$data['password'] = 'admin';
+		$jsonRet = Util::Post_Uri_Params('http://www.pandora.com/oauth2/authenticate', null, $data);
+		echo json_encode($jsonRet);
+		return;
+	}
+
 	public function login()
 	{
 		$data = array();
