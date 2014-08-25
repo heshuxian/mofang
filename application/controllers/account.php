@@ -76,23 +76,23 @@ class Account extends CI_Controller {
 		$content = $this->load->view('account/friendship_manage', $data, TRUE);
 		$this->mp_master->Show($content, $scriptExtra, "主页" , $data);
 	}
-// 	public function coursemanage()
-// 	{
-// 		$data = array();
-// 		$data['actLi'] = "course";
-// 		$data['courseTypeList'] = $this->mp_pandora->Get_CourseTypeList();
-// 		$scriptExtra = '<script type="text/javascript" src="/public/js/course_manage.js"></script>';
-// 		$content = $this->load->view('account/course_manage', $data, TRUE);
-// 		$this->mp_master->Show($content, $scriptExtra, "主页" , $data);
-// 	}
+	// 	public function coursemanage()
+	// 	{
+	// 		$data = array();
+	// 		$data['actLi'] = "course";
+	// 		$data['courseTypeList'] = $this->mp_pandora->Get_CourseTypeList();
+	// 		$scriptExtra = '<script type="text/javascript" src="/public/js/course_manage.js"></script>';
+	// 		$content = $this->load->view('account/course_manage', $data, TRUE);
+	// 		$this->mp_master->Show($content, $scriptExtra, "主页" , $data);
+	// 	}
 	public function addarticle()
 	{
 		$data = array();
-// 		$course_id = 0;
+		// 		$course_id = 0;
 		$img_name = '';
 		$data['actLi'] = "article";
 		$data['typeList'] = $this->article_type;
-//		$data['courseTypeList'] = $this->mp_pandora->Get_CourseTypeList();
+		//		$data['courseTypeList'] = $this->mp_pandora->Get_CourseTypeList();
 		$id = $this->input->get('article_id');
 		if($id){
 			$data['articleObj'] = $this->mp_pandora->Get_ArticleById($id);
@@ -101,7 +101,7 @@ class Account extends CI_Controller {
 		{
 			$this->load->library('form_validation');
 			$id = $this->input->post('txtId');
-			
+
 			$this->form_validation->set_rules('selArticleType',"文章类型",'trim|required');
 			$this->form_validation->set_rules('txtTitle',"标题",'trim|required');
 			$this->form_validation->set_rules('txtContent',"内容",'trim|required');
@@ -111,22 +111,22 @@ class Account extends CI_Controller {
 				$content = trim($this->input->post("txtContent"));
 				$img_name = trim($this->input->post("txtImgLink"));
 				$author = trim($this->input->post("txtAuthor"));
-// 				if($type_id == 2)
-// 					$course_id = $this->input->post("selCourseType");
+				// 				if($type_id == 2)
+				// 					$course_id = $this->input->post("selCourseType");
 			}
 			$currentUser = User::GetCurrentUser();
 			$manager = $currentUser->full_name;
 			if($id){
 				if($this->mp_pandora->Update_ArticleInfo($id,$type_id,$title,$content,$manager,$img_name,$author/*,$course_id*/))
-					redirect("/account/articlemanage");
+				redirect("/account/articlemanage");
 				else
-					$data['error_msg'] = "更新文章信息失败，请重试！";
+				$data['error_msg'] = "更新文章信息失败，请重试！";
 			}else
 			{
 				if($this->mp_pandora->Creat_Article($type_id,$title,$content,$manager,$img_name,$author/*,$course_id*/))
-					redirect("/account/articlemanage");
+				redirect("/account/articlemanage");
 				else
-					$data['error_msg'] = "新建文章失败，请重试！";
+				$data['error_msg'] = "新建文章失败，请重试！";
 			}
 		}
 		$scriptExtra = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
@@ -160,7 +160,7 @@ class Account extends CI_Controller {
 		{
 			$this->load->library('form_validation');
 			$image_id = trim($this->input->post('txtId'));
-	
+
 			$this->form_validation->set_rules('txtImgName',"合作机构链接",'trim|required');
 			if($this->form_validation->run() == TRUE){
 				$img_name = trim($this->input->post("txtImgName"));
@@ -168,15 +168,15 @@ class Account extends CI_Controller {
 			}
 			if($image_id){
 				if($this->mp_pandora->Update_ImageInfo($image_id,$img_name,$memo))
-					redirect("/account/imagemanage");
+				redirect("/account/imagemanage");
 				else
-					$data['error_msg'] = "更新课程类型信息失败，请重试！";
+				$data['error_msg'] = "更新课程类型信息失败，请重试！";
 			}else
 			{
 				if($this->mp_pandora->Creat_Image($img_name,$memo))
-					redirect("/account/imagemanage");
+				redirect("/account/imagemanage");
 				else
-					$data['error_msg'] = "新建课程类型失败，请重试！";
+				$data['error_msg'] = "新建课程类型失败，请重试！";
 			}
 		}
 		$scriptExtra = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
@@ -210,7 +210,7 @@ class Account extends CI_Controller {
 		{
 			$this->load->library('form_validation');
 			$cooperation_id = trim($this->input->post('txtId'));
-				
+
 			$this->form_validation->set_rules('txtName',"合作机构名称",'trim|required');
 			$this->form_validation->set_rules('txtLink',"合作机构链接",'trim|required');
 			if($this->form_validation->run() == TRUE){
@@ -219,15 +219,15 @@ class Account extends CI_Controller {
 			}
 			if($cooperation_id){
 				if($this->mp_pandora->Update_CooperationInfo($cooperation_id,$name,$link))
-					redirect("/account/cooperationmanage");
+				redirect("/account/cooperationmanage");
 				else
-					$data['error_msg'] = "更新课程类型信息失败，请重试！";
+				$data['error_msg'] = "更新课程类型信息失败，请重试！";
 			}else
 			{
 				if($this->mp_pandora->Creat_Cooperation($name,$link))
-					redirect("/account/cooperationmanage");
+				redirect("/account/cooperationmanage");
 				else
-					$data['error_msg'] = "新建课程类型失败，请重试！";
+				$data['error_msg'] = "新建课程类型失败，请重试！";
 			}
 		}
 		$scriptExtra = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
@@ -261,7 +261,7 @@ class Account extends CI_Controller {
 		{
 			$this->load->library('form_validation');
 			$friendship_id = trim($this->input->post('txtId'));
-	
+
 			$this->form_validation->set_rules('txtName',"合作机构名称",'trim|required');
 			$this->form_validation->set_rules('txtLink',"合作机构链接",'trim|required');
 			if($this->form_validation->run() == TRUE){
@@ -270,15 +270,15 @@ class Account extends CI_Controller {
 			}
 			if($friendship_id){
 				if($this->mp_pandora->Update_FriendshipInfo($friendship_id,$name,$link))
-					redirect("/account/friendshipmanage");
+				redirect("/account/friendshipmanage");
 				else
-					$data['error_msg'] = "更新课程类型信息失败，请重试！";
+				$data['error_msg'] = "更新课程类型信息失败，请重试！";
 			}else
 			{
 				if($this->mp_pandora->Creat_Friendship($name,$link))
-					redirect("/account/friendshipmanage");
+				redirect("/account/friendshipmanage");
 				else
-					$data['error_msg'] = "新建课程类型失败，请重试！";
+				$data['error_msg'] = "新建课程类型失败，请重试！";
 			}
 		}
 		$scriptExtra = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
@@ -300,57 +300,57 @@ class Account extends CI_Controller {
 		echo json_encode($jsonRet);
 		return;
 	}
-// 	public function addcourse()
-// 	{
-// 		$data = array();
-// 		$memo = '';
-// 		$data['actLi'] = "course";
-// 		$course_id = $this->input->get('course_id');
-// 		if($course_id){
-// 			$data['courseObj'] = $this->mp_pandora->Get_CourseById($course_id);
-// 		}
-// 		if($_SERVER['REQUEST_METHOD'] == 'POST')
-// 		{
-// 			$this->load->library('form_validation');
-// 			$course_id = $this->input->post('txtId');
-				
-// 			$this->form_validation->set_rules('txtName',"课程类型名称",'trim|required');
-// 			if($this->form_validation->run() == TRUE){
-// 				$name = $this->input->post("txtName");
-// 				$memo = $this->input->post("txtMemo");
-// 			}
-// 			if($course_id){
-// 				if($this->mp_pandora->Update_CourseInfo($course_id,$name,$memo))
-// 					redirect("/account/coursemanage");
-// 				else
-// 					$data['error_msg'] = "更新课程类型信息失败，请重试！";
-// 			}else
-// 			{
-// 				if($this->mp_pandora->Creat_Course($name,$memo))
-// 					redirect("/account/coursemanage");
-// 				else
-// 					$data['error_msg'] = "新建课程类型失败，请重试！";
-// 			}
-// 		}
-// 		$scriptExtra = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
-// 		$scriptExtra .= '<script type="text/javascript" src="/public/js/add_course.js"></script>';
-// 		$content = $this->load->view('account/add_course', $data, TRUE);
-// 		$this->mp_master->Show($content, $scriptExtra, "主页" , $data);
-// 	}
-// 	public function deletecourse()
-// 	{
-// 		$jsonRet = array();
-// 		$course_id = $this->input->post('course_id');
-// 		if($this->mp_pandora->Delete_Course($course_id))
-// 		{
-// 			$jsonRet['ret'] = 0;
-// 		}else{
-// 			$jsonRet['ret'] = 1;
-// 			$jsonRet['msg'] = '删除失败';
-// 		}
-// 		echo json_encode($jsonRet);
-// 		return;
-// 	}
+	// 	public function addcourse()
+	// 	{
+	// 		$data = array();
+	// 		$memo = '';
+	// 		$data['actLi'] = "course";
+	// 		$course_id = $this->input->get('course_id');
+	// 		if($course_id){
+	// 			$data['courseObj'] = $this->mp_pandora->Get_CourseById($course_id);
+	// 		}
+	// 		if($_SERVER['REQUEST_METHOD'] == 'POST')
+	// 		{
+	// 			$this->load->library('form_validation');
+	// 			$course_id = $this->input->post('txtId');
+
+	// 			$this->form_validation->set_rules('txtName',"课程类型名称",'trim|required');
+	// 			if($this->form_validation->run() == TRUE){
+	// 				$name = $this->input->post("txtName");
+	// 				$memo = $this->input->post("txtMemo");
+	// 			}
+	// 			if($course_id){
+	// 				if($this->mp_pandora->Update_CourseInfo($course_id,$name,$memo))
+	// 					redirect("/account/coursemanage");
+	// 				else
+	// 					$data['error_msg'] = "更新课程类型信息失败，请重试！";
+	// 			}else
+	// 			{
+	// 				if($this->mp_pandora->Creat_Course($name,$memo))
+	// 					redirect("/account/coursemanage");
+	// 				else
+	// 					$data['error_msg'] = "新建课程类型失败，请重试！";
+	// 			}
+	// 		}
+	// 		$scriptExtra = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
+	// 		$scriptExtra .= '<script type="text/javascript" src="/public/js/add_course.js"></script>';
+	// 		$content = $this->load->view('account/add_course', $data, TRUE);
+	// 		$this->mp_master->Show($content, $scriptExtra, "主页" , $data);
+	// 	}
+	// 	public function deletecourse()
+	// 	{
+	// 		$jsonRet = array();
+	// 		$course_id = $this->input->post('course_id');
+	// 		if($this->mp_pandora->Delete_Course($course_id))
+	// 		{
+	// 			$jsonRet['ret'] = 0;
+	// 		}else{
+	// 			$jsonRet['ret'] = 1;
+	// 			$jsonRet['msg'] = '删除失败';
+	// 		}
+	// 		echo json_encode($jsonRet);
+	// 		return;
+	// 	}
 	public function getArticleType()
 	{
 		$jsonRet = array();
@@ -366,13 +366,13 @@ class Account extends CI_Controller {
 		echo json_encode($jsonRet);
 		return;
 	}
-/////////////////////////////////////////////
+	/////////////////////////////////////////////
 	public function test()
 	{
-//		$this->mp_pandora->Creat_Course("乏味而");
+		//		$this->mp_pandora->Creat_Course("乏味而");
 		$this->Get_Logo("db7e37d68902c8103139b7b53a9a7613.jpg",100,150);
 	}
-	
+
 
 	function checkaccount()
 	{

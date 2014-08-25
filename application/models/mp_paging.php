@@ -59,7 +59,7 @@ class MP_Paging extends CI_Model
 		$config['num_tag_close'] = '</li>';
 		$config['last_tag_open'] = '<li>';
 		$config['last_tag_close'] = '</li>';
-		$config['cur_tag_open'] = '<li><a class="active" style="font-weight:bold; color:#3C8DBC;">';
+		$config['cur_tag_open'] = '<li class="active"><a>';
 		$config['cur_tag_close'] = '</a></li>';
 		$config['prev_tag_open'] = '<li>';
 		$config['prev_tag_close'] = '</li>';
