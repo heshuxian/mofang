@@ -61,7 +61,7 @@
 																				<!-- #C0C0C0 -->
 			</div>
 			<div class="righttop">
-				<a href="">申请会员</a><a onCLick='javascript:addfavorite()'>收藏本站</a><a href="">联系我们</a><a href=""><img src="/public/portal/images/weibo.gif" /></a><a href=""><img src="/public/portal/images/weixin.gif" /></a>
+				<a href="/portal/registration">申请会员</a><a onCLick='javascript:addfavorite()'>收藏本站</a><a href="">联系我们</a><a href=""><img src="/public/portal/images/weibo.gif" /></a><a href=""><img src="/public/portal/images/weixin.gif" /></a>
 			</div>
 			<div class="search">
 			<input class="input" type="text" value="请输入搜索关键字" onblur="if (this.value=='') this.value='请输入搜索关键字'" onclick="if (this.value=='请输入搜索关键字') this.value=''">

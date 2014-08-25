@@ -41,8 +41,9 @@ class Api extends CI_Controller {
 	public function getuserinfo()
 	{
 		$jsonRet = array();
-		$jsonRet['ret'] = 1;
-		//User::
+		$userObj = User::GetUserById($this->server->getOwnerId());
+		unset($userObj->password);
+		$jsonRet['userObj'] = $userObj;
 		echo json_encode($jsonRet);
 		return;
 	}

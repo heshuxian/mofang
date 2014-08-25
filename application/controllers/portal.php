@@ -13,7 +13,7 @@ class Portal extends CI_Controller {
 
 	public function index()
 	{
-		$data = array();
+//		$data = array();
 		$data['site_name'] =  $this->config->item('site_name');
 		$data['pageTitle'] = '主页';
 		$data['pageIndex'] = 10;
@@ -176,21 +176,51 @@ class Portal extends CI_Controller {
 		$filename = urldecode($filename);
 		return $this->_Get_Image_Thumb("/article_img/".$filename, 500, 146);
 	}
-
-	public function test()
+	public function registration()
 	{
-		$jsonRet = array();
 		$data = array();
-		$data['client_id'] = 'pandora';
-		$data['client_secret'] = 'pandora';
-		$data['redirect_uri'] = 'www.pandora.com';
-		$data['userid'] = 'admin';
-		$data['password'] = 'admin';
-		$jsonRet = Util::Post_Uri_Params('http://www.pandora.com/oauth2/authenticate', null, $data);
-		echo json_encode($jsonRet);
+		$data['site_name'] =  $this->config->item('site_name');
+		$data['pageTitle'] = '注册';
+		if($_SERVER['REQUEST_METHOD'] == 'POST')
+		{
+			$this->load->library('form_validation');
+			$this->form_validation->set_rules('txtUsername','用户名','trim|required');
+			$this->form_validation->set_rules('txtPassword', "密码",'required');
+			$this->form_validation->set_rules('txtConfirmPassword', "确认密码",'required');
+			$this->form_validation->set_rules('txtFullName', "用户全名",'required');
+			$this->form_validation->set_rules('txtEmail', "邮箱",'required');
+			if ($this->form_validation->run())
+			{
+				$username = $this->input->post('txtUsername');
+				$password = $this->input->post('txtPassword');
+				$full_name = $this->input->post('txtFullName');
+				$email = $this->input->post('txtEmail');
+				if(User::CreateUser($username,$password,$full_name,'user',$email))
+				{
+					$data['msg'] = "注册用户成功!";
+					redirect("/portal");
+				}else{
+					$data['msg'] = "注册新用户失败，请重试!";
+				}
+			}
+			$data['msg'] = "注册新用户失败";
+		}
+		$data['scriptExtra'] = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
+		$data['scriptExtra'] .= '<script type="text/javascript" src="/public/js/registration.js"></script>';
+		$this->load->view('/portal/registration',$data);
+	}
+	public function checkuser()
+	{
+		$username = trim($this->input->get('txtUsername'));
+		if(empty($username))
+		{
+			echo 'false';
+			return;
+		}
+		$user = User::GetUserByName($username);
+		echo $user == null? 'true' :'false';
 		return;
 	}
-
 	public function login()
 	{
 		$data = array();
@@ -217,5 +247,33 @@ class Portal extends CI_Controller {
 		$data['scriptExtra'] = '<script type="text/javascript" src="/public/js/jquery.validate.min.js"></script>';
 		$data['scriptExtra'] .= '<script type="text/javascript" src="/public/js/login.js"></script>';
 		$this->load->view('login',$data);
+	}
+	
+	public function getToken()
+	{
+		$jsonRet = array();
+		$data['client_id'] = 'pandora';
+		$data['client_secret'] = 'pandora';
+		$data['redirect_uri'] = 'www.pandora.com';
+		$data['userid'] = 'zhangsan';
+		$data['password'] = 'zhangsan';
+		$jsonRet['response'] = Util::Post_Uri_Params('http://www.pandora.com/oauth2/authenticate', array() ,$data);
+		var_dump($jsonRet);
+		return;
+	}
+	public function getUserinfo()
+	{
+		$jsonRet = array();
+		$data['client_id'] = 'pandora';
+		$data['client_secret'] = 'pandora';
+		$data['redirect_uri'] = 'www.pandora.com';
+		$data['userid'] = 'zhangsan';
+		$data['password'] = 'zhangsan';
+		$jsonRet['response'] = json_decode(Util::Post_Uri_Params('http://www.pandora.com/oauth2/authenticate', array() ,$data));		
+		$header = array('Authorization' => $jsonRet['response']->access_token);
+		$jsonRet['userInfo'] = json_decode(Util::Post_Uri_Params('http://www.pandora.com/api/getuserinfo', $header ,array()));
+		var_dump($jsonRet['userInfo']);
+		echo json_encode($jsonRet);
+		return;
 	}
 }

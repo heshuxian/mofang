@@ -44,6 +44,15 @@ class User{
 		return $dbObj->insert('user');
 	}
 
+	function GetUserByName($name)
+	{
+		$dbObj = $this->load->database('default',TRUE);
+		$dbQuery = $dbObj->get_where('user',array('username'=>$name));
+		if ($dbQuery->num_rows() > 0){
+			return $dbQuery->row();
+		}
+		return null;
+	}
 	function UpdateUserBindingphone($id, $phone)
 	{
 		$dbObj = $this->load->database('default',TRUE);
