@@ -6,8 +6,8 @@ $(document).ready(function(){
 			eval('var ret=' + data);
 			if (ret.ret == 0) {
 				$('#fileAddr').removeClass("hidden");
-				var obj = '<div class="control"> <img class="margin" style="width:150px;height:100px" src="' + ret.addr
-					+ '"><span>' + ret.addr + '</span> </div>';
+				var obj = '<div class="control"> <img class="margin" style="width:150px;height:100px" src="/article_img/' + ret.addr
+					+ '"><span>/article_img/' + ret.addr + '</span> </div>';
 				$('#fileAddr').append(obj);
 			} else {
 				alert('图片上传失败。');
@@ -29,7 +29,7 @@ $(document).ready(function(){
 			},
 			txtAuthor:{
 				required : true,
-				maxlength : 10
+				maxlength : 20
 			}
 		},
 		// 设置错误信息
@@ -46,7 +46,7 @@ $(document).ready(function(){
 			},
 			txtAuthor : {
 				required : '请填写文章作者',
-				maxlength : '作者名称不能多于10个字符'
+				maxlength : '作者名称不能多于20个字符'
 			}
 		},
 		errorClass:'alert-danger'

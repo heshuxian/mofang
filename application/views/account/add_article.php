@@ -18,7 +18,7 @@
 		 <div class="box-header">
 			<h3 class="box-title"><?php if(isset($articleObj)){?>编辑<?php } else{?>添加<?php }?>文章</h3>
 		</div>
-		<form method="POST" enctype="multipart/form-data" target="upload_target" action="/portal/uploadArticleImg">
+		<form method="POST" enctype="multipart/form-data" target="upload_target" action="/account/uploadArticleImg">
 			<div class="form-group">
 	            <label>上传文章图片(教师风采177*263，行业动态156*116，学员感悟44*44，活动相关245*145，俱乐部245*145)：</label>
 	            <div>

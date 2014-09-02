@@ -26,7 +26,7 @@ class Portal extends CI_Controller {
 		$data['clubList'] = $this->mp_pandora->Get_ArticleList(5,4);
 		$data['friendshipList'] = $this->mp_pandora->Get_friendshipList(6);
 		$data['cooperationList'] = $this->mp_pandora->Get_cooperationList(6);
-		$scriptExtra ='<script type="text/javascript" src="/public/js/index.js"></script>';
+		$scriptExtra = '';//'<script type="text/javascript" src="/public/js/index.js"></script>';
 		$content = $this->load->view('portal/index', $data, TRUE);
 		$this->mp_master->Show_Portal($content, $scriptExtra, "主页" , $data);
 	}

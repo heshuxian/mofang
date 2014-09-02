@@ -94,7 +94,7 @@
 						<div class="sentimentimg"><img src="/portal/Get_Logo_4/<?php echo $studentList[$i]->img_name;?>" /></div>
 						<div class="sentimenttext">
 							<a href='/portal/showDetail?id=<?php echo $studentList[$i]->id;?>'><p class="text"><?php echo Util::cutArticle($studentList[$i]->content,150);?></p></a>
-							<p class="name">公司名称职务&nbsp;-&nbsp;<a href=""><?php echo $studentList[$i]->author;?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo date("Y-m-d",strtotime($studentList[$i]->add_datetime));?></p>
+							<p class="name"><?php echo $studentList[$i]->title;?>&nbsp;-&nbsp;<a href=""><?php echo $studentList[$i]->author;?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<?php echo date("Y-m-d",strtotime($studentList[$i]->add_datetime));?></p>
 						</div>
 					</li>
 					<?php }?>
@@ -111,10 +111,10 @@
 				<div class="carousel-component">
 					<div class="carousel-clip-region">
 						<ul class="carousel-list">
-							<?php if(count($clubList)<100) $num=count($studentList);else $num=100;?>
+							<?php if(count($clubList)) {$num=count($clubList);?>
 							<?php for($i=0; $i < $num; $i++){?>
 							<li><a href="/portal/showDetail?id=<?php echo $clubList[$i]->id;?>"><img src="/portal/Get_Logo_5/<?php echo $clubList[$i]->img_name;?>" /><p><?php echo $clubList[$i]->title;?></p></a></li>
-							<?php }?>
+							<?php }}?>
 						  </ul>
 					 </div>
 				</div>

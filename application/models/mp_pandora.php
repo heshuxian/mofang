@@ -175,7 +175,7 @@ class MP_Pandora extends CI_Model
 		$dbObj->set("content", $content);
 		$dbObj->set("manager", $manager);
 		$dbObj->set("img_name", $img_name);
-		$dbObj->set("author", $img_name);
+		$dbObj->set("author", $author);
 		// 		$dbObj->set("course_id", $course_id);
 		$dbObj->set("add_datetime", 'now()',false);
 		return $dbObj->insert('article');

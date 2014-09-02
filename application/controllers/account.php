@@ -402,4 +402,34 @@ class Account extends CI_Controller {
 		User::LogOutUser();
 		redirect('/login');
 	}
+	public function uploadArticleImg()
+	{
+		$jsonRet = array();
+		if ($_SERVER["REQUEST_METHOD"] == "POST")
+		{
+			$this->load->library('upload');
+			$config['upload_path'] = './article_img/';
+			$config['allowed_types'] = 'jpg|jpeg|gif|png|bmp';
+			$config['max_size']	= '8000';
+			$config['encrypt_name'] = TRUE;
+			$this->upload->initialize($config);
+			if (isset($_FILES['uploadImage']))
+			{
+				$bRet = $this->upload->do_upload('uploadImage');
+				if($bRet){
+					$fileData = $this->upload->data();
+					$photo_img = $fileData["file_name"];
+					$jsonRet['ret'] = 0;
+					$jsonRet['file_name'] = $photo_img;
+					$jsonRet['addr'] =  $photo_img;
+					echo json_encode($jsonRet);
+					return;
+				}
+			}
+			$jsonRet['ret'] = 1;
+			$jsonRet['msg'] =  "上传失败";
+			echo json_encode($jsonRet);
+			return;
+		}
+	}
 }

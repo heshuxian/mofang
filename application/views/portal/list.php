@@ -5,10 +5,10 @@
 			<div class="conleft">
 				<h2><?php echo $typeList[$type_id];?></h2>
 				<ul class="conlist">
-					<?php foreach($articleList as $articleObj):?>
+					<?php foreach($articleList as $articleObj){?>
 					<li>
 						<div class="listpic">
-							<a href="/portal/showDetail?id=<?php echo $articleObj->id;?>"><img src="/portal/Get_Logo_1/<?php if($articleObj->img_name) echo $articleObj->img_name;else echo "1ee143402c13fdefae2bb9b40893590a.png";?>" /></a>
+							<a href="/portal/showDetail?id=<?php echo $articleObj->id;?>"><img src="/portal/<?php if($articleObj->img_name) $img_name = $articleObj->img_name;else $img_name = "1ee143402c13fdefae2bb9b40893590a.png"; if($type_id == 0) { echo 'Get_Logo_0/'.$img_name;}else { echo 'Get_Logo_1/'.$img_name; }?>"  style='width:156p;height:116px;'/></a>
 						</div>
 						<div class="listtext">
 							<h3><a href="/portal/showDetail?id=<?php echo $articleObj->id;?>"><?php echo $articleObj->title;?></a></h3>
@@ -16,7 +16,7 @@
 							<p>[ <?php echo date("Y-m-d",strtotime($articleObj->add_datetime));?> 发布 ]</p>
 						</div>
 					</li>
-				 	<?php endforeach;?> 
+				 	<?php }?> 
 				</ul>
 			</div>
 			<div class="conright">

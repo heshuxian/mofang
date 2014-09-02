@@ -26,6 +26,7 @@ $(document).ready(function(){
 		}else{
 			
 		}
+		setNotice();
 	});
 	
 	setInterval(setNotice,10000);

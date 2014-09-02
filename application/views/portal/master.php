@@ -9,7 +9,7 @@
 	<script src="/public/js/jquery.min.js" type="text/javascript"></script>
 	<script src="/public/portal/js/jquery.superslide.2.1.1.js" type="text/javascript"></script>
 	<script src="/public/portal/js/pptBox.js" type="text/javascript"></script>
-	
+	<script src="/public/js/index.js" type="text/javascript"></script>	
 	<script type="text/javascript"> 
 	/*function AddFavorite(sURL, sTitle)
 	{
