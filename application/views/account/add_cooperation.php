@@ -33,11 +33,8 @@
 				<?php }?>
 				<div class="form-group">
 					<label style="color: red">*</label><label>合作机构名称:</label>
-					<input type="text" <?php if(!isset($cooperationObj)){?> placeholder="请输入合作机构名称" <?php }?> name = "txtName" id = "txtName" class="form-control" value='<?php if(isset($cooperationObj)) echo $cooperationObj->name;?>'/>
+					<input type="text" <?php if(!isset($cooperationObj)){?> placeholder="请输入合作机构名称" <?php }?> name = "txtName" id = "txtName" class="form-control" value='<?php if(isset($cooperationObj)) echo $cooperationObj->name;?>' autofocus="autofocus"/>
 				</div><br>
-				<script>
-	  				document.getElementById("txtName").focus()
-					</script>
 				<div class="form-group">
 					<label style="color: red">*</label><label>合作机构链接:</label>
 					<input type="text" <?php if(!isset($cooperationObj)){?> placeholder="请输入合作机构链接" <?php }?> name = "txtLink" id = "txtLink" class="form-control" value='<?php if(isset($cooperationObj)) echo $cooperationObj->link;?>'/>

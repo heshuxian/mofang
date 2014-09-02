@@ -45,15 +45,12 @@
 				<?php }?>
 				<div class="form-group">
 					<label style="color: red">*</label><label>封面图文件名称:</label>
-					<input type="text" <?php if(!isset($imageObj)){?> placeholder="请输入封面图文件名称" <?php }?> name = "txtImgName" id = "txtImgName" class="form-control" value='<?php if(isset($imageObj)) echo $imageObj->img_name;?>'/>
+					<input autofocus="autofocus" type="text" <?php if(!isset($imageObj)){?> placeholder="请输入封面图文件名称" <?php }?> name = "txtImgName" id = "txtImgName" class="form-control" value='<?php if(isset($imageObj)) echo $imageObj->img_name;?>'/>
 				</div><br>
 				<div class="form-group">
 					<label>封面图描述:</label>
 					<input type="text" <?php if(!isset($imageObj)){?> placeholder="请输入封面图描述" <?php }?> name = "txtMemo" id = "txtMemo" class="form-control" value='<?php if(isset($imageObj)) echo $imageObj->memo;?>'/>
 				</div><br>
-				<script>
-	  				document.getElementById("txtImgName").focus()
-				</script>
 			</div>
 			<div class='box-footer clearfix'>
 				<button type="submit" class="btn btn-primary pull-right" id="btnSave">保存</button>

@@ -27,42 +27,42 @@ class MP_Pandora extends CI_Model
 		$dbObj->order_by('add_datetime','desc');
 		if(!($type_id === FALSE)){
 			if($limit == 0)
-			return $dbObj->get_where('article',array('type_id'=>$type_id))->result();
+				return $dbObj->get_where('article',array('type_id'=>$type_id))->result();
 			else
-			return $dbObj->get_where('article',array('type_id'=>$type_id), $limit, $offset)->result();
+				return $dbObj->get_where('article',array('type_id'=>$type_id), $limit, $offset)->result();
 		}
 
 		if($limit == 0)
-		return $dbObj->get('article')->result();
+			return $dbObj->get('article')->result();
 		else
-		return $dbObj->get('article', $limit, $offset)->result();
+			return $dbObj->get('article', $limit, $offset)->result();
 	}
 	function Get_ImageList($limit=0, $offset=0)
 	{
 		$dbObj = $this->load->database('default',TRUE);
 		$dbObj->order_by('id','desc');
 		if($limit == 0)
-		return $dbObj->get('big_image')->result();
+			return $dbObj->get('big_image')->result();
 		else
-		return $dbObj->get('big_image', $limit, $offset)->result();
+			return $dbObj->get('big_image', $limit, $offset)->result();
 	}
 	function Get_cooperationList($limit=0, $offset=0)
 	{
 		$dbObj = $this->load->database('default',TRUE);
 		$dbObj->order_by('id','desc');
 		if($limit == 0)
-		return $dbObj->get('cooperation')->result();
+			return $dbObj->get('cooperation')->result();
 		else
-		return $dbObj->get('cooperation', $limit, $offset)->result();
+			return $dbObj->get('cooperation', $limit, $offset)->result();
 	}
 	function Get_friendshipList($limit=0, $offset=0)
 	{
 		$dbObj = $this->load->database('default',TRUE);
 		$dbObj->order_by('id','desc');
 		if($limit == 0)
-		return $dbObj->get('friendship_link')->result();
+			return $dbObj->get('friendship_link')->result();
 		else
-		return $dbObj->get('friendship_link', $limit, $offset)->result();
+			return $dbObj->get('friendship_link', $limit, $offset)->result();
 	}
 	// 	function Get_CourseList($course_id = FALSE, $limit = 0, $offset = 0)
 	// 	{
@@ -283,6 +283,14 @@ class MP_Pandora extends CI_Model
 	// 		$dbObj->set('memo', $memo);
 	// 		return $dbObj->update('course');
 	// 	}
+
+	function Get_LatestNoice()
+	{
+		$dbObj = $this->load->database('default',TRUE);
+		$dbObj->order_by('add_datetime','desc');
+		$dbObj->select('id,title');
+		return $dbObj->get('article',10,0)->result();
+	}
 }
 
 

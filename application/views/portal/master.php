@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta content="width=device-width,initial-scale=1.0" name="viewport">
 	<title>资本魔方 - 传播和实践资本智慧第一平台</title>
 	<link href="/public/portal/style/layout.css" rel="stylesheet" type="text/css" />
 	<!--[if lte IE 7]><link rel="stylesheet" href="style/ie7.css" type="text/css"/><![endif]-->
@@ -56,12 +57,13 @@
 	<div class="header">
 		<h1 class="logo" title="资本魔方 - 传播和实践资本智慧第一平台"><a href="/portal">资本魔方 - 传播和实践资本智慧第一平台</a></h1>
 		<div class="right">
-			<div class="notice">
-				<a href="" class="redfont">[最新公告]</a>&nbsp; <a href="" style="color:#A9A9A9;">最新公告信息，最新公告信息标题摘要 ...</a>
-																				<!-- #C0C0C0 -->
+			<div class="notice" id="notice" cur_id='0'>
+				<a href='/portal/showList?type_id=7' class="redfont">[最新公告]</a>&nbsp; <a href="" style="color:#A9A9A9;">最新公告信息，最新公告信息标题摘要 ...</a>
+					<!-- #C0C0C0 -->
 			</div>
 			<div class="righttop">
-				<a href="/portal/registration">申请会员</a><a onCLick='javascript:addfavorite()'>收藏本站</a><a href="">联系我们</a><a href=""><img src="/public/portal/images/weibo.gif" /></a><a href=""><img src="/public/portal/images/weixin.gif" /></a>
+				<a href="/portal/registration">申请会员</a><a onCLick='javascript:addfavorite()'>收藏本站</a><a href="">联系我们</a><a href=""><img src="/public/portal/images/weibo.gif" /></a>
+				<a href="#thumb" class="thumbnail"><img width="25px" height="28px" border="0" src="/public/portal/images/weixin.gif"><span><img src="/public/portal/images/QRCode.gif"><br></span></a>
 			</div>
 			<div class="search">
 			<input class="input" type="text" value="请输入搜索关键字" onblur="if (this.value=='') this.value='请输入搜索关键字'" onclick="if (this.value=='请输入搜索关键字') this.value=''">

@@ -54,15 +54,16 @@
 				<h2><span><font>活动</font>相关</span><a href="/portal/showList?type_id=3" class="more">更多</a></h2>
 				<div class="activitie">
 					<script>
-					 var box =new PPTBox();
-					 box.width = 245; //宽度
-					 box.height = 145;//高度
-					 box.autoplayer = 3;//自动播放间隔时间)
-					 <?php $j=count($activityList); $num = $j>6 ? 6 : $j;?>
-					 <?php foreach ($activityList as $activityObj):?>
-					 box.add({"url":"/portal/Get_Logo_3/<?php echo $activityObj->img_name;?>","href":"/portal/showDetail?id=<?php echo $activityObj->id;?>","title":"<?php echo $activityObj->title;?>"})
-					 <?php endforeach;?>
+					 <?php if(count($activityList)){ $count=0; ?>
+						 var box =new PPTBox();
+						 box.width = 245; //宽度
+						 box.height = 145;//高度
+						 box.autoplayer = 3;//自动播放间隔时间)
+					 <?php foreach ($activityList as $obj){ if($count > 5) break;?>
+					 box.add({"url":"/portal/Get_Logo_3/<?php echo $obj->img_name;?>","href":"/portal/showDetail?id=<?php echo $obj->id;?>","title":"<?php echo $obj->title;?>"})
+					 <?php $count++;} ?>
 					 box.show();
+					 <?php }?>
 					</script>
 				</div>
 			</div>
@@ -111,9 +112,9 @@
 					<div class="carousel-clip-region">
 						<ul class="carousel-list">
 							<?php if(count($clubList)<100) $num=count($studentList);else $num=100;?>
-							<?php foreach ($clubList as $clubObj):?>
-							<li><a href="/portal/showDetail?id=<?php echo $clubObj->id;?>"><img src="/portal/Get_Logo_5/<?php echo $clubObj->img_name;?>" /><p><?php echo $clubObj->title;?></p></a></li>
-							<?php endforeach;?>
+							<?php for($i=0; $i < $num; $i++){?>
+							<li><a href="/portal/showDetail?id=<?php echo $clubList[$i]->id;?>"><img src="/portal/Get_Logo_5/<?php echo $clubList[$i]->img_name;?>" /><p><?php echo $clubList[$i]->title;?></p></a></li>
+							<?php }?>
 						  </ul>
 					 </div>
 				</div>

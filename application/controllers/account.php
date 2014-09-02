@@ -359,13 +359,13 @@ class Account extends CI_Controller {
 		echo json_encode($jsonRet);
 		return;
 	}
-	public function getCourseTypeList()
-	{
-		$jsonRet = array();
-		$jsonRet['courseTypeList'] = $this->mp_pandora->Get_CourseTypeList();
-		echo json_encode($jsonRet);
-		return;
-	}
+// 	public function getCourseTypeList()
+// 	{
+// 		$jsonRet = array();
+// 		$jsonRet['courseTypeList'] = $this->mp_pandora->Get_CourseTypeList();
+// 		echo json_encode($jsonRet);
+// 		return;
+// 	}
 	/////////////////////////////////////////////
 	public function test()
 	{

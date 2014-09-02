@@ -32,11 +32,8 @@
 				<?php }?>
 				<div class="form-group">
 					<label style="color: red">*</label><label>友情链接名称:</label>
-					<input type="text" <?php if(!isset($friendshipObj)){?> placeholder="请输入友情链接名称" <?php }?> name = "txtName" id = "txtName" class="form-control" value='<?php if(isset($friendshipObj)) echo $friendshipObj->name;?>'/>
+					<input type="text" <?php if(!isset($friendshipObj)){?> placeholder="请输入友情链接名称" <?php }?> name = "txtName" id = "txtName" class="form-control" value='<?php if(isset($friendshipObj)) echo $friendshipObj->name;?>' autofocus="autofocus"/>
 				</div><br>
-				<script>
-  				document.getElementById("txtName").focus()
-				</script>
 				<div class="form-group">
 					<label style="color: red">*</label><label>友情链接链接:</label>
 					<input type="text" <?php if(!isset($friendshipObj)){?> placeholder="请输入友情链接描述" <?php }?> name = "txtLink" id = "txtLink" class="form-control" value='<?php if(isset($friendshipObj)) echo $friendshipObj->link;?>'/>
