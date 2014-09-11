@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-const DEFAULT_PAGE_SIZE = 10;
+const DEFAULT_PAGE_SIZE = 5;
 class Portal extends CI_Controller {
 
 	var $article_type = array("老师风采","行业动态","课程介绍","活动相关","学员感悟","俱乐部","老师观点","新闻公告");

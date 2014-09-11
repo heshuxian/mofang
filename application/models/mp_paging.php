@@ -31,8 +31,8 @@ class MP_Paging extends CI_Model
 		$config['last_tag_close'] = '</li>';
 		$config['next_link'] = '';
 		$config['prev_link'] = '';
-		$config['cur_tag_open'] = '<li class="active">';
-		$config['cur_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a>';
+		$config['cur_tag_close'] = '</a></li>';
 		$config['prev_tag_open'] = '<li class="previous">';
 		$config['prev_tag_close'] = '</li>';
 		$config['next_tag_open'] = '<li class="next">';
