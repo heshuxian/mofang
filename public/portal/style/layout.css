@@ -34,11 +34,9 @@ h1,h2,h3{font-weight:normal}
 	text-indent:-5000px;
 }
 .header .right{
-	width:855px;
-	overflow:hidden;
-	padding:2px 0 0 75px;
+	width:860px;
+	padding:2px 0 0 70px;
 	height:48px;
-	overflow:visible;
 }
 .header .notice{
 	width:285px;
@@ -49,48 +47,30 @@ h1,h2,h3{font-weight:normal}
 	border-radius:3px;
 	overflow:hidden;
 }
-.righttop{
-	padding:0 2px 0 31px;
-	line-height:28px;
+.header .notice a{color:#aaa}
+.header .notice a:hover{color:#777}
+.header .notice a.redfont,.header .notice a.redfont:hover{color:#d11300}
+.righttop{padding:0 0 0 20px; line-height:28px; width:275px}
+.righttop a{float:left; margin:0 16px 0 0}
+.thumbnail{position:relative; z-index:99}
+.thumbnail span{
+	width:96px;
+	height:100px;
+	padding:8px 2px 0;
+    background:url(../images/QRbg.png) 0 0 no-repeat;
+    position:absolute;
+	display:none;
+	left:-38px;
+	top:27px;
 }
-.righttop a{
-	float:left;
-	margin:0 16px 0 0;
-}
-
-.thumbnail {
-    position: relative;
-    z-index: 0;
-}
-.thumbnail:hover {
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 50;
-}
-.thumbnail span {
-    background-color: #FFFFE0;
-    border: 0 dashed #808080;
-    color: #000000;
-    left: -1000px;
-    padding: 5px;
-    position: absolute;
-    text-decoration: none;
-    visibility: hidden;
-}
-.thumbnail span img {
-    border-width: 0;
-    padding: 0;
-}
-.thumbnail:hover span {
-    left: 20px;
-    top: 0;
-    visibility: visible;
-}
-
+.thumbnail span img{width:96px; height:96px}
+.thumbnail:hover span{display:block}
+.search{width:255px}
 .search .input{
 	height:26px;
 	line-height:26px;
 	border:1px solid #ddd;
-	color:#DDDDDD;
+	color:#aaa;
 	width:169px;
 	padding:0 6px;
 	border-right:none 0;
@@ -111,10 +91,10 @@ h1,h2,h3{font-weight:normal}
 	float:left;
 	font-size:14px;
 	font-weight:bold;
-	margin:0 0 0 12px;
+	margin:0 0 0 15px;
     overflow:hidden;
-    padding:0 0 0 230px;
-    width:688px;
+    padding:0 0 0 255px;
+    width:660px;
 	background:url(../images/nav_bg.gif) left center no-repeat;
 }
 .nav li{padding:0 0 0 25px}
@@ -146,7 +126,7 @@ h1,h2,h3{font-weight:normal}
 	width:324px;
 }
 .introbox h2 a{color:#444}
-.introbox p{float:left; width:320px; margin:7px 0 0}
+.introbox p{float:left; width:320px; margin:4px 0 0; line-height:21px}
 .indexlist{float:left; width:245px; margin:0 28px 0 0}
 .indexlist h2,.sentiment h2{
 	height:40px;
@@ -188,7 +168,7 @@ h1,h2,h3{font-weight:normal}
 .newsbox h2 span,.clubbox h2 span{padding:0 16px 0 0; background:url(../images/h2right.gif) right center no-repeat}
 .newsbox h2 .more,.clubbox h2 .more{margin:16px 0 0}
 .newspic{float:left; width:180px; margin:16px 0; height:134px}
-.newspic a,.listpic a{
+.newspic img,.listpic a{
 	float:left;
 	padding:3px;
 	width:156px;
@@ -252,9 +232,16 @@ h1,h2,h3{font-weight:normal}
     position:absolute;
     top:42px;
     z-index:99;
+	width:24px;
+	height:48px;
+	background-repeat:no-repeat;
+	background-position:0 0;
+	overflow:hidden;
+	cursor:pointer;
 }
-.clubcon .leftbtn{left:0}
-.clubcon .rightbtn{right:0}
+.clubcon .leftbtn{left:0; background-image:url(../images/left-enabled.gif)}
+.clubcon .rightbtn{right:0; background-image:url(../images/right-enabled.gif)}
+.clubcon .leftbtn.disabled, .clubcon .rightbtn.disabled{background-position:0 -48px}
 .carousel-component{position:relative; z-index:98; overflow:hidden; visibility:visible; height:160px; width:1024px; margin:0 28px; float:left}				
 .carousel-component .carousel-list{width:9000000px; position:relative; z-index:1}
 .carousel-component .carousel-list li{width:232px; border:0; padding:0 12px}
@@ -265,7 +252,6 @@ h1,h2,h3{font-weight:normal}
 .carousel-component .carousel-clip-region{overflow:hidden; margin:0 auto; position:relative}
 .carousel-component .carousel-list li{text-align:center; overflow:hidden}
 .carousel-component .carousel-list li a{margin:0 0 10px}
-.clubcon .leftbtn img,.clubcon .rightbtn img{cursor:pointer}
 .mainnav{margin:0 auto; height:50px; line-height:50px; color:#777; width:1000px}
 .mainnav span{color:#d11300; font-size:14px}
 .content{

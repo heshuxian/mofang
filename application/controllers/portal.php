@@ -40,7 +40,6 @@ class Portal extends CI_Controller {
 		$data['rand_id'] = $rand_id;
 		$data['randList'] = $this->mp_pandora->Get_ArticleList($rand_id,6);
 		$offset = intval($this->input->get('per_page'));
-		//		$data['courseTypeList'] = $this->mp_pandora->Get_CourseTypeList();
 		$data['typeList'] = $this->article_type;
 		$data['courseList'] = $this->mp_pandora->Get_ArticleList(2,5);
 		$data['friendshipList'] = $this->mp_pandora->Get_friendshipList(6);

@@ -25,7 +25,7 @@ class MP_Pandora extends CI_Model
 	{
 		$dbObj = $this->load->database('default',TRUE);
 		$dbObj->order_by('add_datetime','desc');
-		if(!($type_id === FALSE)){
+		if(!($type_id === FALSE) && $type_id < 7){
 			if($limit == 0)
 				return $dbObj->get_where('article',array('type_id'=>$type_id))->result();
 			else
